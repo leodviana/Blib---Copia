@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:customRender="clr-namespace:Blib.Custom_render;assembly=Blib"
+             xmlns:behaviors="clr-namespace:Blib.Behaviors;assembly=Blib"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="Blib.Views.PerfilPage"
+             Title="Meus Perfis">
+
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem Icon="{Binding Icone}" Command="{Binding GoToCommand}" IsEnabled="{Binding Valido}"/>
+    </ContentPage.ToolbarItems>
+    
+    <ScrollView>
+       
+        <StackLayout>
+            <StackLayout Padding="0,30,0,0">
+                <Image Source="BliB.png" HorizontalOptions="Center" VerticalOptions="Center"></Image>
+                <Label Text="Alterar Foto" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+            </StackLayout>
+            <Label Text="DADOS PESSOAIS"  FontSize="15" FontAttributes="Bold" TextColor="Black"  HorizontalOptions="StartAndExpand" VerticalOptions="Start" Margin="10,10"></Label>
+            <BoxView  Margin="0,-10"
+            HeightRequest="1" 
+            BackgroundColor="Gray" 
+            HorizontalOptions="FillAndExpand" />
+
+
+            <StackLayout Padding="10,10,0,0">
+                <Label Text="Nome" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"></Label>
+                <customRender:TextboxCustomizadoSemBorda Text="{Binding dsc_nome_usuario}" FontSize="15" PlaceholderColor="Black" Placeholder="Nome" HorizontalOptions="FillAndExpand" VerticalOptions="Fill"  HorizontalTextAlignment="Start" Margin="-5,-10"></customRender:TextboxCustomizadoSemBorda>
+                <BoxView  Margin="-10,0"
+            HeightRequest="1" 
+            BackgroundColor="Gray" 
+            HorizontalOptions="FillAndExpand" />
+            </StackLayout>
+
+            <StackLayout Padding="10,10,0,0">
+                <Label Text="Email" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"></Label>
+                <customRender:TextboxCustomizadoSemBorda   FontSize="15"  Text="{Binding Email}" PlaceholderColor="Black" Placeholder="Email" HorizontalOptions="FillAndExpand" VerticalOptions="Fill"  HorizontalTextAlignment="Start" Margin="-5,-10">
+                    <customRender:TextboxCustomizadoSemBorda.Behaviors>
+                        <behaviors:EmailValidatorBehavior />
+                    </customRender:TextboxCustomizadoSemBorda.Behaviors>
+                </customRender:TextboxCustomizadoSemBorda>
+                <BoxView  Margin="-10,0"
+            HeightRequest="1" 
+            BackgroundColor="Gray" 
+            HorizontalOptions="FillAndExpand" />
+            </StackLayout>
+            <StackLayout Padding="10,10,0,0">
+                <Label Text="Senha" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"></Label>
+                <customRender:TextboxCustomizadoSemBorda  IsPassword="True" Text="{Binding Senha}" FontSize="15" PlaceholderColor="Black" Placeholder="Senha" HorizontalOptions="FillAndExpand" VerticalOptions="Fill"  HorizontalTextAlignment="Start" Margin="-5,-10"></customRender:TextboxCustomizadoSemBorda>
+                <BoxView  Margin="-10,0"
+            HeightRequest="1" 
+            BackgroundColor="Gray" 
+            HorizontalOptions="FillAndExpand" />
+            </StackLayout>
+            <ActivityIndicator IsRunning="{Binding IsRunning}"  Color="Gray">
+
+            </ActivityIndicator>
+        </StackLayout>
+        
+    </ScrollView>
+
+</ContentPage>

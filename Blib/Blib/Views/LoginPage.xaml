@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="Blib.Views.LoginPage">
+
+
+    <StackLayout
+            AbsoluteLayout.LayoutBounds="0.0, 0.0, 1.0,0.5"
+            AbsoluteLayout.LayoutFlags="All">
+
+        <Frame OutlineColor="White" 
+                   WidthRequest="300" 
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand"
+                   HasShadow="False"
+                   BackgroundColor="Transparent"
+                   >
+            <StackLayout>
+                
+                <Entry Placeholder="Usuario" Text="{Binding Usuarioid}"></Entry>
+                <Entry Placeholder="Senha"  Text="{Binding Senha}" IsPassword="True" ></Entry>
+                <ActivityIndicator IsRunning="{Binding IsRunning}">
+
+                </ActivityIndicator>
+                <Button Text="Selecione"    BorderRadius="44"  HorizontalOptions="Center" BackgroundColor="Transparent" TextColor="Black"  Command="{Binding NavigateCommand}">
+                   
+                </Button>
+
+            </StackLayout>
+            
+        </Frame>
+
+    </StackLayout>
+</ContentPage>

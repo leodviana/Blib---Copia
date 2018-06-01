@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:customRender="clr-namespace:Blib.Custom_render;assembly=Blib"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="Blib.Views.LoginPage02"
+             >
+   <ScrollView>
+   <StackLayout Padding="0,0,-10,0">
+        <Image BackgroundColor="#405F7E"  HeightRequest="150" WidthRequest="600"></Image>
+
+        <StackLayout Orientation="Horizontal" Padding="40,50,0,-10">
+            <Label Text="Usuario " FontSize="15" Margin="0,10"> </Label>
+                <Label Text="|" FontSize="15"  Margin="0,10"></Label>
+                <customRender:TextboxCustomizadoSemBorda  Text ="{Binding Usuarioid}" FontSize="15" PlaceholderColor="Gray" Placeholder="Usuario" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"  HorizontalTextAlignment="Start">
+
+            </customRender:TextboxCustomizadoSemBorda>
+
+            
+        </StackLayout>
+        <StackLayout Padding="30,10,30,0" HorizontalOptions="FillAndExpand">
+            <BoxView  
+            HeightRequest="1" 
+            BackgroundColor="Gray" 
+            HorizontalOptions="FillAndExpand" />
+        </StackLayout>
+        
+        <StackLayout Orientation="Horizontal" Padding="40,5,0,8">
+                <Label Text="Senha" FontSize="15" Margin="0,10"></Label>
+                <Label Text="|" FontSize="15" Margin="0,10"></Label>
+                <customRender:TextboxCustomizadoSemBorda Text="{Binding Senha}" IsPassword="True" FontSize="15" PlaceholderColor="Gray" Placeholder="Senha" HorizontalOptions="FillAndExpand" VerticalOptions="Fill "  HorizontalTextAlignment="Start"></customRender:TextboxCustomizadoSemBorda>
+        </StackLayout>
+        <StackLayout  HorizontalOptions="FillAndExpand">
+                <StackLayout.Padding>
+                    <OnIdiom x:TypeArguments="Thickness"
+                        Phone="0,-3,5,0"
+                        Tablet="0,0,5,0"/>
+                    
+                 </StackLayout.Padding>   
+            <BoxView  
+            HeightRequest="1" 
+            BackgroundColor="Gray" 
+            HorizontalOptions="FillAndExpand" />
+                <Label Text="Esqueci minha senha" HorizontalOptions="CenterAndExpand" Margin="0,10">
+                    
+                </Label> 
+        </StackLayout>
+        <StackLayout Padding="30,25,40,8">
+                <ActivityIndicator IsRunning="{Binding IsRunning}">
+
+                </ActivityIndicator>
+                <Button Text="Entrar"  Command="{Binding LoginCommand}" HorizontalOptions="FillAndExpand" BackgroundColor="#405F7E" TextColor="White"></Button>
+            <Button Text="Entrar Com FaceBook" HorizontalOptions="FillAndExpand" BackgroundColor="Blue" TextColor="White"></Button>
+            <Button Text="Criar Uma Conta" Command="{Binding NavigateCommand}" HorizontalOptions="FillAndExpand" BackgroundColor="#405F7E" TextColor="White"></Button>
+        </StackLayout>
+    </StackLayout>
+    </ScrollView>
+</ContentPage> 
