@@ -10,12 +10,12 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Blib.Custom_render;
-using Blib.Interfaces.Renderers;
+using Blib.Renderers;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
 [assembly: ExportRenderer(typeof(TextboxCustomizadoSemBorda), typeof(RenderizadorCustomizadoTextboxSemBorda))]
-namespace Blib.Interfaces.Renderers
+namespace Blib.Renderers
 {
     public class RenderizadorCustomizadoTextboxSemBorda : EntryRenderer
     {

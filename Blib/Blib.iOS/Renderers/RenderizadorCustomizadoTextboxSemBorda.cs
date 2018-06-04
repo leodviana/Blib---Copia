@@ -7,7 +7,10 @@ using Foundation;
 using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
+using Blib.Custom_render;
+using Blib.iOS.Renderers;
 
+[assembly: ExportRenderer(typeof(TextboxCustomizadoSemBorda), typeof(RenderizadorCustomizadoTextboxSemBorda))]
 namespace Blib.iOS.Renderers
 {
     public class RenderizadorCustomizadoTextboxSemBorda : EntryRenderer

@@ -1,0 +1,24 @@
+﻿<Properties StartupConfiguration="{93E2F0C1-CC14-4DFD-A137-3ED548FD7A71}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Blib/Blib/Services/ApiService.cs">
+    <Files>
+      <File FileName="Blib/Blib/ViewModels/LoginPage02ViewModel.cs" Line="141" Column="1" />
+      <File FileName="Blib/Blib/Views/MainPage.xaml" Line="27" Column="34" />
+      <File FileName="Blib/Blib/ViewModels/MainPageViewModel.cs" Line="102" Column="1" />
+      <File FileName="Blib/Blib/obj/Debug/Blib.Views.MainPage.xaml.g.cs" Line="25" Column="1" />
+      <File FileName="Blib/Blib/Views/MainPage.xaml.cs" Line="32" Column="1" />
+      <File FileName="Blib/Blib/Services/ApiService.cs" Line="62" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/leonardoviana/Documents/GitHub/Blib-original/Blib/Blib/ViewModels/LoginPage02ViewModel.cs" relfile="Blib/Blib/ViewModels/LoginPage02ViewModel.cs" line="93" column="1" />
+      <Breakpoint file="/Users/leonardoviana/Documents/GitHub/Blib-original/Blib/Blib/ViewModels/LoginPage02ViewModel.cs" relfile="Blib/Blib/ViewModels/LoginPage02ViewModel.cs" line="130" column="1" />
+      <Breakpoint file="/Users/leonardoviana/Documents/GitHub/Blib-original/Blib/Blib/ViewModels/MainPageViewModel.cs" relfile="Blib/Blib/ViewModels/MainPageViewModel.cs" line="95" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Blib.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D80C5315-E24A-4921-AFF5-34E49B38F570" />
+  <MonoDevelop.Ide.ItemProperties.Blib.Droid PreferredExecutionTarget="Android.Android_Accelerated_Oreo" AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" />
+  <MultiItemStartupConfigurations />
+</Properties>

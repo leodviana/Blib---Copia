@@ -62,7 +62,7 @@ namespace Blib.ViewModels
             {
                 return new DelegateCommand(() =>
                 {
-                    http://api.whatsapp.com/send?1=pt_BR&phone=5500000000000
+                    //http://api.whatsapp.com/send?1=pt_BR&phone=5500000000000
                     _navigationService.NavigateAsync("PerfilPage");
                 });
 

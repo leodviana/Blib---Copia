@@ -7,6 +7,7 @@ using UIKit;
 
 namespace Blib.iOS
 {
+    
     public class Application
     {
         // This is the main entry point of the application.

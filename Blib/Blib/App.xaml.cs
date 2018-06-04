@@ -12,17 +12,17 @@ namespace Blib
         public static usuario usuariologado { get; set; }
         public App() : this(null) { }
 
-        protected override void OnInitialized()
+        protected override async void OnInitialized()
         {
             InitializeComponent();
-                                 
+                           
 
-        
+                    
             if (usuariologado == null)
             {
                 helper.Settings.Default.umavez = true;
                 // MainPage = new NavigationPage(new LoginPage02());
-                NavigationService.NavigateAsync("/PrismNavigationPage2/LoginPage02");
+                await NavigationService.NavigateAsync("/PrismNavigationPage2/LoginPage02");
                 // App.Current.MainPage = new LoginPage02();
                 
 
@@ -35,7 +35,7 @@ namespace Blib
                 helper.Settings.Default.usuarioLogado = usuariologado;
                 //await checa_permissao();
                // helper.Settings.Default.umavez = false;
-                NavigationService.NavigateAsync("MainPage", navigationParams);
+                await NavigationService.NavigateAsync("MainPage", navigationParams);
               //  App.Current.MainPage = new MainPage();
             }
 

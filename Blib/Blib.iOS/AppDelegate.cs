@@ -32,7 +32,7 @@ namespace Blib.iOS
         }
     }
 
-    internal class App : Xamarin.Forms.Application
+/*    internal class App : Xamarin.Forms.Application
     {
         private iOSInitializer iOSInitializer;
 
@@ -40,7 +40,7 @@ namespace Blib.iOS
         {
             this.iOSInitializer = iOSInitializer;
         }
-    }
+    }*/
 
     public class iOSInitializer : IPlatformInitializer
     {

@@ -29,8 +29,6 @@
     <MtouchDebug>true</MtouchDebug>
     <CodesignKey>iPhone Developer</CodesignKey>
     <CodesignProvision />
-    <MtouchSdkVersion>
-    </MtouchSdkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -106,10 +104,13 @@
     <ITunesArtwork Include="iTunesArtwork" />
     <ITunesArtwork Include="iTunesArtwork@2x" />
     <None Include="packages.config" />
+    <Compile Include="CustomMKAnnotationView.cs" />
+    <Compile Include="CustomMapRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Blib\Blib.csproj">
       <Name>Blib</Name>
+      <Project>{28C6FE20-4139-4852-ACD0-612AB0D519C1}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -219,6 +220,9 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\BliB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\loc_blib.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
