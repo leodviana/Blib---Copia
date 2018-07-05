@@ -13,7 +13,7 @@ public class ClusterManager_OnClusterClickListenerImplementor
 		__md_methods = 
 			"n_onClusterClick:(Lcom/google/maps/android/clustering/Cluster;)Z:GetOnClusterClick_Lcom_google_maps_android_clustering_Cluster_Handler:Com.Google.Maps.Android.Clustering.ClusterManager/IOnClusterClickListenerInvoker, GoogleMapsUtilityBinding\n" +
 			"";
-		mono.android.Runtime.register ("Com.Google.Maps.Android.Clustering.ClusterManager+IOnClusterClickListenerImplementor, GoogleMapsUtilityBinding, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", ClusterManager_OnClusterClickListenerImplementor.class, __md_methods);
+		mono.android.Runtime.register ("Com.Google.Maps.Android.Clustering.ClusterManager+IOnClusterClickListenerImplementor, GoogleMapsUtilityBinding", ClusterManager_OnClusterClickListenerImplementor.class, __md_methods);
 	}
 
 
@@ -21,7 +21,7 @@ public class ClusterManager_OnClusterClickListenerImplementor
 	{
 		super ();
 		if (getClass () == ClusterManager_OnClusterClickListenerImplementor.class)
-			mono.android.TypeManager.Activate ("Com.Google.Maps.Android.Clustering.ClusterManager+IOnClusterClickListenerImplementor, GoogleMapsUtilityBinding, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
+			mono.android.TypeManager.Activate ("Com.Google.Maps.Android.Clustering.ClusterManager+IOnClusterClickListenerImplementor, GoogleMapsUtilityBinding", "", this, new java.lang.Object[] {  });
 	}
 
 

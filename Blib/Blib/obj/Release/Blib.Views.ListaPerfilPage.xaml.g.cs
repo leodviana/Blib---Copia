@@ -11,7 +11,7 @@
 namespace Blib.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Lp solutions\\Blib\\Blib\\Blib\\Views\\ListaPerfilPage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Lp solutions\\Blib2\\Blib-original\\Blib\\Blib\\Views\\ListaPerfilPage.xaml")]
     public partial class ListaPerfilPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

@@ -7,6 +7,7 @@ using UIKit;
 using Prism.Unity;
 using Microsoft.Practices.Unity;
 using Xamarin.Forms;
+using CoreLocation;
 
 namespace Blib.iOS
 {
@@ -26,6 +27,16 @@ namespace Blib.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+
+            if (CLLocationManager.Status == CLAuthorizationStatus.Denied)
+            {
+                if (UIDevice.CurrentDevice.CheckSystemVersion(8, 0))
+                {
+                    NSString settingsString = UIApplication.OpenSettingsUrlString;
+                    NSUrl url = new NSUrl(settingsString);
+                    UIApplication.SharedApplication.OpenUrl(url);
+                }
+            }
             LoadApplication(new App(new iOSInitializer()));
 
             return base.FinishedLaunching(app, options);

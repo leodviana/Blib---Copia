@@ -95,12 +95,23 @@ namespace Blib.ViewModels
             Primeiravez  = (bool)helper.Settings.Default.umavez;
             _dialogService = dialogService;
             _navigationService = navigationService;
-
+          
             _usuarioLogado  = (usuario)helper.Settings.Default.usuarioLogado;
             geoLocatorService = new GeoLocatorService();
             apiservice = new ApiService();
-            updateLocation();
-            getusuarios();
+           
+            IsRunning = true;
+              updateLocation();
+              getusuarios();
+            IsRunning = false;
+                /*Task.Run(async() =>
+                {
+
+
+
+                });*/
+           
+
 
             if (Primeiravez)
             {
@@ -109,6 +120,11 @@ namespace Blib.ViewModels
                     IsRunning = true;
                     updateLocation();
                     getusuarios();
+                    /*Task.Run(async () =>
+                    {
+                        
+                        
+                    });*/
                     IsRunning = false;
 
 
@@ -131,10 +147,12 @@ namespace Blib.ViewModels
                 // Primeiravez = true;
                 helper.Settings.Default.umavez = false;
             }
+            
         }
 
-       
-        private async void fecha_listen()
+      
+      
+        private async Task fecha_listen()
         {        
             await StopListening();
         }
@@ -201,8 +219,9 @@ namespace Blib.ViewModels
                         pin.Type = Xamarin.Forms.Maps.PinType.Generic;
                         pin.Label = user.dsc_nome_usuario;
                         pin.Address = "Av. xxxxxxx";
-                        pin.Url = "www.BliB.com";
-
+                        //pin.Url = "www.BliB.com";
+                        string mensagem = "&text = Ola!%20Estou%20entrando%20em%20contato%20através%20do%20BLIB";
+                        pin.Url = "http://api.whatsapp.com/send?1=pt_BR&phone=558599890253" + mensagem;
                         customMap.CustomPins.Add(pin);
 
                     }
@@ -213,7 +232,9 @@ namespace Blib.ViewModels
                         pin.Type = Xamarin.Forms.Maps.PinType.Generic;
                         pin.Label = "Blib No. " +i ;
                         pin.Address = "Av. xxxxxxx";
-                        pin.Url = "www.BliB.com";
+                        //pin.Url = "www.BliB.com";
+                        string mensagem = "&text = Ola!%20Estou%20entrando%20em%20contato%20através%20do%20BLIB";
+                        pin.Url = "http://api.whatsapp.com/send?1=pt_BR&phone=558599890253" + mensagem;
 
                         customMap.CustomPins.Add(pin);
                         i = i + 1;
@@ -231,7 +252,7 @@ namespace Blib.ViewModels
         }
                
 
-        private async void updateLocation()
+        private async Task updateLocation()
         {
            // await _dialogService.DisplayAlertAsync("entrei no update ", "Gunna need that location", "OK");
             IsRunning = true;
@@ -240,12 +261,7 @@ namespace Blib.ViewModels
                 var status = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Location);
                 if (status != PermissionStatus.Granted)
                 {
-                   /* if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Location))
-                    {
-                        await _dialogService.DisplayAlertAsync("Need location", "Gunna need that location", "OK");
-                       // status = await Util.CheckPermissions(Permission.Location);
-                    }*/
-
+                  
                     var results = await CrossPermissions.Current.RequestPermissionsAsync(Permission.Location);
                     //Best practice to always check that the key exists
                     if (results.ContainsKey(Permission.Location))
@@ -262,9 +278,9 @@ namespace Blib.ViewModels
                         var position = await locator.GetPositionAsync();
                         Latitude = position.Latitude;
                         Longitude = position.Longitude;
+                        await UpdateCustomerLocation();
                         customMap.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(position.Latitude, position.Longitude), Distance.FromKilometers(.3)));
-                        UpdateCustomerLocation();
-                        // Getusuariocomposicao();
+                      
                     }
                     else
                     {
@@ -306,21 +322,24 @@ namespace Blib.ViewModels
                      });
                      */
                     customMap.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(position.Latitude, position.Longitude), Distance.FromKilometers(.3)));
+                        
                     UpdateCustomerLocation();
-                    //Getusuariocomposicao();
                     getusuarios();
+                   
+                    //Getusuariocomposicao();
+                    
                 });
             }
         }
 
 
-        private async void UpdateCustomerLocation()
+        private async Task UpdateCustomerLocation()
         {
             IsRunning = true;
 
             //ATUALIZAÇÃO NA API
-            _usuarioLogado.cod_latitude = Latitude.ToString();
-            _usuarioLogado.cod_longitude = Longitude.ToString();
+          //  _usuarioLogado.cod_latitude = Latitude.ToString();
+          //  _usuarioLogado.cod_longitude = Longitude.ToString();
              var response = await apiservice.Gravaposicao(_usuarioLogado);
             
             IsRunning = false;
@@ -365,7 +384,7 @@ namespace Blib.ViewModels
             if (CrossGeolocator.Current.IsListening)
                 return;
 
-            await CrossGeolocator.Current.StartListeningAsync(TimeSpan.FromSeconds(60), 50, true);
+            await CrossGeolocator.Current.StartListeningAsync(TimeSpan.FromSeconds(30), 50, true);
 
             CrossGeolocator.Current.PositionChanged += PositionChanged;
             CrossGeolocator.Current.PositionError += PositionError;
@@ -374,7 +393,9 @@ namespace Blib.ViewModels
         // como tranformar esse metodo assicrono 
         private void PositionChanged(object sender, PositionEventArgs e)
         {
+
             
+                        
             //If updating the UI, ensure you invoke on main thread
             var position = e.Position;
             var output = "Full: Lat: " + position.Latitude + " Long: " + position.Longitude;
@@ -385,8 +406,12 @@ namespace Blib.ViewModels
             output += "\n" + $"Altitude: {position.Altitude}";
             output += "\n" + $"Altitude Accuracy: {position.AltitudeAccuracy}";
             Latitude = position.Latitude;
+            Longitude = position.Longitude;
+            _usuarioLogado.cod_latitude = position.Latitude.ToString();
+            _usuarioLogado.cod_longitude = position.Longitude.ToString();
+            UpdateCustomerLocation();
             customMap.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(position.Latitude, position.Longitude), Distance.FromKilometers(.3)));
-            updateLocation();
+           // updateLocation();
             //UpdateCustomerLocation();
             //Getusuariocomposicao();
             getusuarios();

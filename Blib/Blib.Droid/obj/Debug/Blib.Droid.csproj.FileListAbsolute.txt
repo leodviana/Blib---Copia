@@ -742,3 +742,4 @@ C:/Lp solutions/Blib/Blib/Blib.Droid/obj/Debug/linksrc/Xamarin.Forms.Xaml.dll.md
 /Users/leonardoviana/Documents/GitHub/Blib-original/Blib/Blib.Droid/obj/Debug/linksrc/Xamarin.Forms.Core.dll.mdb
 /Users/leonardoviana/Documents/GitHub/Blib-original/Blib/Blib.Droid/obj/Debug/linksrc/Xamarin.Forms.Platform.Android.dll.mdb
 /Users/leonardoviana/Documents/GitHub/Blib-original/Blib/Blib.Droid/obj/Debug/linksrc/Xamarin.Forms.Xaml.dll.mdb
+C:\Lp solutions\Blib2\Blib-original\Blib\Blib\bin\Debug\Blib.dll

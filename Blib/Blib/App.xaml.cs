@@ -21,27 +21,32 @@ namespace Blib
             if (usuariologado == null)
             {
                 helper.Settings.Default.umavez = true;
-                // MainPage = new NavigationPage(new LoginPage02());
+               
                 await NavigationService.NavigateAsync("/PrismNavigationPage2/LoginPage02");
-                // App.Current.MainPage = new LoginPage02();
-                
-
+               
             }
             else
             {
-
                 var navigationParams = new NavigationParameters();
                 navigationParams.Add("usuario", usuariologado);
                 helper.Settings.Default.usuarioLogado = usuariologado;
-                //await checa_permissao();
-               // helper.Settings.Default.umavez = false;
                 await NavigationService.NavigateAsync("MainPage", navigationParams);
-              //  App.Current.MainPage = new MainPage();
+              
             }
 
         }
-        
 
+        protected override void OnStart()
+        {
+
+            string mensagem = "";
+        }
+
+        protected override void OnResume()
+        {
+
+            string mensagem = "";
+        }
         protected override void RegisterTypes()
         {
             Container.RegisterTypeForNavigation<NavigationPage>();

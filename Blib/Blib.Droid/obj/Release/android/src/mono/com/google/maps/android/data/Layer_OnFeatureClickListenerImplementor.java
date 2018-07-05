@@ -13,7 +13,7 @@ public class Layer_OnFeatureClickListenerImplementor
 		__md_methods = 
 			"n_onFeatureClick:(Lcom/google/maps/android/data/Feature;)V:GetOnFeatureClick_Lcom_google_maps_android_data_Feature_Handler:Com.Google.Maps.Android.Data.Layer/IOnFeatureClickListenerInvoker, GoogleMapsUtilityBinding\n" +
 			"";
-		mono.android.Runtime.register ("Com.Google.Maps.Android.Data.Layer+IOnFeatureClickListenerImplementor, GoogleMapsUtilityBinding, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", Layer_OnFeatureClickListenerImplementor.class, __md_methods);
+		mono.android.Runtime.register ("Com.Google.Maps.Android.Data.Layer+IOnFeatureClickListenerImplementor, GoogleMapsUtilityBinding", Layer_OnFeatureClickListenerImplementor.class, __md_methods);
 	}
 
 
@@ -21,7 +21,7 @@ public class Layer_OnFeatureClickListenerImplementor
 	{
 		super ();
 		if (getClass () == Layer_OnFeatureClickListenerImplementor.class)
-			mono.android.TypeManager.Activate ("Com.Google.Maps.Android.Data.Layer+IOnFeatureClickListenerImplementor, GoogleMapsUtilityBinding, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
+			mono.android.TypeManager.Activate ("Com.Google.Maps.Android.Data.Layer+IOnFeatureClickListenerImplementor, GoogleMapsUtilityBinding", "", this, new java.lang.Object[] {  });
 	}
 
 

@@ -11,7 +11,7 @@
 namespace Blib {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Lp solutions\\Blib\\Blib\\Blib\\App.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Lp solutions\\Blib2\\Blib-original\\Blib\\Blib\\App.xaml")]
     public partial class App : global::Prism.Unity.PrismApplication {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

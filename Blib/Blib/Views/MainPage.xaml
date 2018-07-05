@@ -7,21 +7,22 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              xmlns:local="clr-namespace:Blib.Custom_render;assembly=Blib"
              x:Class="Blib.Views.MainPage">
+
+
   
-           
+    
     <AbsoluteLayout>
 
-      <ActivityIndicator IsRunning="{Binding IsRunning}">
-
-      </ActivityIndicator>
+      
       
       <local:CustomMap 
         
         AbsoluteLayout.LayoutBounds="0.0, 0.0, 1.0, 1.0"
                AbsoluteLayout.LayoutFlags="All"
-        x:Name="customMap"  MapType="Street" WidthRequest="1020" HeightRequest="200"  IsShowingUser="true"/>
-
+        x:Name="customMap"  MapType="Street" WidthRequest="1020" HeightRequest="200"  IsShowingUser="true" />
+         
       
     </AbsoluteLayout>
+  
   
 </slideOverKit:MenuContainerPage>

@@ -11,7 +11,7 @@
 namespace Blib.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Lp solutions\\Blib\\Blib\\Blib\\Views\\PrismNavigationPage2.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Lp solutions\\Blib2\\Blib-original\\Blib\\Blib\\Views\\PrismNavigationPage2.xaml")]
     public partial class PrismNavigationPage2 : global::Xamarin.Forms.NavigationPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

@@ -13,7 +13,7 @@ public class LocationListenerImplementor
 		__md_methods = 
 			"n_onLocationChanged:(Landroid/location/Location;)V:GetOnLocationChanged_Landroid_location_Location_Handler:Android.Gms.Location.ILocationListenerInvoker, Xamarin.GooglePlayServices.Location\n" +
 			"";
-		mono.android.Runtime.register ("Android.Gms.Location.ILocationListenerImplementor, Xamarin.GooglePlayServices.Location, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", LocationListenerImplementor.class, __md_methods);
+		mono.android.Runtime.register ("Android.Gms.Location.ILocationListenerImplementor, Xamarin.GooglePlayServices.Location", LocationListenerImplementor.class, __md_methods);
 	}
 
 
@@ -21,7 +21,7 @@ public class LocationListenerImplementor
 	{
 		super ();
 		if (getClass () == LocationListenerImplementor.class)
-			mono.android.TypeManager.Activate ("Android.Gms.Location.ILocationListenerImplementor, Xamarin.GooglePlayServices.Location, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
+			mono.android.TypeManager.Activate ("Android.Gms.Location.ILocationListenerImplementor, Xamarin.GooglePlayServices.Location", "", this, new java.lang.Object[] {  });
 	}
 
 

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" android:versionCode="2" android:versionName="inicio" package="Blib.Droid">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="preferExternal" android:versionCode="2" android:versionName="inicio" package="Blib.Droid">
 	<uses-sdk android:minSdkVersion="18" android:targetSdkVersion="27" />
 	<uses-permission android:name="android.permission.INTERNET" />
 	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
